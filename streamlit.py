@@ -19,11 +19,6 @@ In the materials specifications:
 \n\n - d represents the inner radius of the cylinder
 \n\n - D represents the outer radius of the cylinder
 \n\n - h1 represents the center-to-center distance between two adjacent cylinders with a default value of 430nm""")
-#--------------------------------set up enviroment-------#
- # Chạy lệnh tạo máy chủ ảo Xvfb
-os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost")
-# Thiết lập biến môi trường DISPLAY
-os.environ["DISPLAY"] = ":1"
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
 def Au_model(d):
     global abs_wl
@@ -137,6 +132,7 @@ if st.button("Run"):
             data=data2, 
             file_name='data.txt',
             mime='text/csv')
+    
     #------------------------------Hinh anh vat lieu---------------------------------------#
     def img3d(d):
         D = d + 30 
@@ -170,20 +166,23 @@ if st.button("Run"):
                 y3 = 430 + D/2 + 100 + (r)*np.sin(theta)
                 mlab.mesh(x3, y3, h, color=(0.8, 0.7, 0.65))
     #--------------------------------------------------------------------#
-    import subprocess
-    with col1: 
-        st.subheader("Image of the material")
-        img3d(number)
-        def view(theta, phi):
-            mlab.view(azimuth=60, elevation=70, distance=2500)#hinh anh ban dau khi chua thay doi goc
-            mlab.view(theta, phi, distance=3000)
-            mlab.savefig("image.png")
-            image_path = 'image.png'
-    
-            st.image(image_path)
-            # shutil.rmtree('3D')
-            os.remove(image_path)
-    
-        azimuth = st.slider('The azimuth argument specifies the angle "phi" on the x-y plane.', 0, 360, 60, 10)
-        elevation = st.slider('The elevation argument specifies the angle "theta" from the z axis.', 0, 180, 70, 10)
-        view(azimuth, elevation)
+# Chạy lệnh tạo máy chủ ảo Xvfb
+os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost")
+# Thiết lập biến môi trường DISPLAY
+os.environ["DISPLAY"] = ":1"
+with col1: 
+    st.subheader("Image of the material")
+    img3d(number)
+    def view(theta, phi):
+        mlab.view(azimuth=60, elevation=70, distance=2500)#hinh anh ban dau khi chua thay doi goc
+        mlab.view(theta, phi, distance=3000)
+        mlab.savefig("image.png")
+        image_path = 'image.png'
+
+        st.image(image_path)
+        # shutil.rmtree('3D')
+        os.remove(image_path)
+
+    azimuth = st.slider('The azimuth argument specifies the angle "phi" on the x-y plane.', 0, 360, 60, 10)
+    elevation = st.slider('The elevation argument specifies the angle "theta" from the z axis.', 0, 180, 70, 10)
+    view(azimuth, elevation)
