@@ -173,7 +173,7 @@ with col1:
         image_path = '3D/image.png'
 
         st.image(image_path)
-        os.remove(image_path)
+        shutil.rmtree('3D')
 
     azimuth = st.slider('The azimuth argument specifies the angle "phi" on the x-y plane.', 0, 360, 60, 10)
     elevation = st.slider('The elevation argument specifies the angle "theta" from the z axis.', 0, 180, 70, 10)
