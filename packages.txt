@@ -1,3 +1,2 @@
 libgl1
 libxrender1
-xvfb-run
