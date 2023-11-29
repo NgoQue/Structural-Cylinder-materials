@@ -115,7 +115,7 @@ if st.button("Run"):
     with col2:
         st.subheader("Data")
         data = pd.DataFrame(abs_wl, columns=['Wavelength', 'Abs'])
-        data_csv = st.dataframe(data, height=500, width=400)
+        data_csv = st.dataframe(data, height=250, width=100)
     
         #save fiel as CSV
         data1 = data.to_csv(index=False)
