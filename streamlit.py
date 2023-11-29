@@ -19,6 +19,11 @@ In the materials specifications:
 \n\n - d represents the inner radius of the cylinder
 \n\n - D represents the outer radius of the cylinder
 \n\n - h1 represents the center-to-center distance between two adjacent cylinders with a default value of 430nm""")
+#--------------------------------set up enviroment-------#
+ # Chạy lệnh tạo máy chủ ảo Xvfb
+        os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost")
+        # Thiết lập biến môi trường DISPLAY
+        os.environ["DISPLAY"] = ":1"
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
 def Au_model(d):
     global abs_wl
@@ -167,11 +172,6 @@ if st.button("Run"):
     #--------------------------------------------------------------------#
     import subprocess
     with col1: 
-        # Chạy lệnh tạo máy chủ ảo Xvfb
-        os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost")
-        
-        # Thiết lập biến môi trường DISPLAY
-        os.environ["DISPLAY"] = ":1"
         st.subheader("Image of the material")
         img3d(number)
         def view(theta, phi):
