@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+import matplotlib as plt
 import joblib
 from mayavi import mlab
 from pandas import DataFrame 
@@ -12,7 +12,7 @@ add_selectbox = st.sidebar.selectbox(
     "Select material",
     ("Au", "Nb", "TiN", "Ta", "TiC", "Ti",  "VC",  "VN")
 )
-number = st.sidebar.number_input('Please enter the inner radius of the cylinder into the box below.',value  = 200, step = 10)
+number = st.sidebar.number_input('Please enter the inner diameter of the cylinder into the box below.',value  = 200, step = 10)
 st.sidebar.markdown("""
 In the materials specifications:
 \n\n - d represents the inner radius of the cylinder
