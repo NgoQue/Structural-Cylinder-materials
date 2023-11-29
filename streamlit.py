@@ -128,7 +128,7 @@ if st.button("Run"):
         #save fiel as txt
         data2 = data.to_csv(index=False, sep='\t')
         st.download_button(
-            label="Download data as TXT",
+            label="Download as TXT",
             data=data2, 
             file_name='data.txt',
             mime='text/csv')
