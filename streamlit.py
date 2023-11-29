@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import joblib
-from mayavi import mlab
+# from mayavi import mlab
 from pandas import DataFrame 
 from PIL import Image
 import os
@@ -19,11 +19,6 @@ In the materials specifications:
 \n\n - d represents the inner radius of the cylinder
 \n\n - D represents the outer radius of the cylinder
 \n\n - h1 represents the center-to-center distance between two adjacent cylinders with a default value of 430nm""")
-#--------------------------------set up enviroment-------#
- # Chạy lệnh tạo máy chủ ảo Xvfb
-os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost")
-# Thiết lập biến môi trường DISPLAY
-os.environ["DISPLAY"] = ":1"
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
 def Au_model(d):
     global abs_wl
@@ -99,16 +94,17 @@ if st.button("Run"):
     if (add_selectbox == "Ti"): Ti_model(number)
     if (add_selectbox == "VC"): VC_model(number)
     if (add_selectbox == "VN"): VN_model(number)
-    
-    # st.subheader("The absorption spectrum")
-    plt.figure(dpi = 300)
-    fig, ax = plt.subplots()
-    ax.plot(abs_wl[ :, 0], abs_wl[ :, 1])
-    ax.set_xlabel("wavelength(nm)")
-    ax.set_ylabel("Abs")
-    ax.set_xlim([200, 3000])
-    ax.set_ylim([0, 1])
-    st.pyplot(fig)
+    col1, col2 = st.columns([2.5, 1])
+    with col1:
+        # st.subheader("The absorption spectrum")
+        plt.figure(dpi = 300)
+        fig, ax = plt.subplots()
+        ax.plot(abs_wl[ :, 0], abs_wl[ :, 1])
+        ax.set_xlabel("wavelength(nm)")
+        ax.set_ylabel("Abs")
+        ax.set_xlim([200, 3000])
+        ax.set_ylim([0, 1])
+        st.pyplot(fig)
     #----------------Hieu suat hap thu-------------------------------------------------#
     H = 0
     for i in range(0, 1002, 1):
@@ -116,7 +112,6 @@ if st.button("Run"):
     H = H/2700
     st.markdown("The average absorption efficiency of :blue[**%s**] at d =  %d, h1 = %d is: **%.2f** %% " %(add_selectbox, number, number+30, 100*H))
     #------------------------------Tao va lưu du lieu------------------------------------#
-    col1, col2 = st.columns([2.5, 1])
     with col2:
         st.subheader("Data")
         data = pd.DataFrame(abs_wl, columns=['Wavelength', 'Abs'])
@@ -137,7 +132,7 @@ if st.button("Run"):
             data=data2, 
             file_name='data.txt',
             mime='text/csv')
-    
+    '''
     #------------------------------Hinh anh vat lieu---------------------------------------#
     def img3d(d):
         D = d + 30 
@@ -191,3 +186,4 @@ if st.button("Run"):
         azimuth = st.slider('The azimuth argument specifies the angle "phi" on the x-y plane.', 0, 360, 60, 10)
         elevation = st.slider('The elevation argument specifies the angle "theta" from the z axis.', 0, 180, 70, 10)
         view(azimuth, elevation)
+'''
