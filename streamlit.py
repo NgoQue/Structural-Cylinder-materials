@@ -83,6 +83,7 @@ def VN_model(d):
     abs_wl = extra_model.predict(a)
     abs_wl = abs_wl.reshape(1003, 2)
 #----------------Goi ham va ve do thi--------------------------------------------#
+st.subheader('Spectral Absorption Prediction')
 if st.button("Run"):
     if (add_selectbox == "Au"): Au_model(number)
     if (add_selectbox == "Nb"): Nb_model(number)
@@ -94,7 +95,6 @@ if st.button("Run"):
     if (add_selectbox == "VN"): VN_model(number)
     
     # st.subheader("The absorption spectrum")
-    st.subheader('Spectral Absorption Prediction')
     plt.figure(dpi = 300)
     fig, ax = plt.subplots()
     ax.plot(abs_wl[ :, 0], abs_wl[ :, 1])
