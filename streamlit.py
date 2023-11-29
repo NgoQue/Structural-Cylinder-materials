@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import joblib
-from mayavi import mlab
+# from mayavi import mlab
 from pandas import DataFrame 
 from PIL import Image
 import os
@@ -130,6 +130,7 @@ with col2:
         file_name='data.txt',
         mime='text/csv')
 #------------------------------Hinh anh vat lieu---------------------------------------#
+'''
 def img3d(d):
     D = d + 30 
     h1 = D
@@ -178,3 +179,4 @@ with col1:
     azimuth = st.slider('The azimuth argument specifies the angle "phi" on the x-y plane.', 0, 360, 60, 10)
     elevation = st.slider('The elevation argument specifies the angle "theta" from the z axis.', 0, 180, 70, 10)
     view(azimuth, elevation)
+    '''
