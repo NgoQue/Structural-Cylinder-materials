@@ -117,13 +117,13 @@ if st.button("Run"):
         data = pd.DataFrame(abs_wl, columns=['Wavelength', 'Abs'])
         data_csv = st.dataframe(data, height=350, width=200)
     
-        #save fiel as CSV
-        data1 = data.to_csv(index=False)
-        st.download_button(
-            label="Download data as CSV",
-            data=data1, 
-            file_name='data.csv',
-            mime='text/csv')
+        # #save fiel as CSV
+        # data1 = data.to_csv(index=False)
+        # st.download_button(
+        #     label="Download data as CSV",
+        #     data=data1, 
+        #     file_name='data.csv',
+        #     mime='text/csv')
     
         #save fiel as txt
         data2 = data.to_csv(index=False, sep='\t')
