@@ -93,7 +93,8 @@ if st.button("Run"):
     if (add_selectbox == "VC"): VC_model(number)
     if (add_selectbox == "VN"): VN_model(number)
     
-    st.subheader("The absorption spectrum")
+    # st.subheader("The absorption spectrum")
+    st.subheader('Spectral Absorption Prediction')
     plt.figure(dpi = 300)
     fig, ax = plt.subplots()
     ax.plot(abs_wl[ :, 0], abs_wl[ :, 1])
