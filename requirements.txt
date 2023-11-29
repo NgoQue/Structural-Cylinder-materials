@@ -11,3 +11,7 @@ Pillow>=7.1.2
 # Deploy ----------------------------------------------------------------------
 setuptools>=65.5.1 # Snyk vulnerability fix
 
+--extra-index-url https://wheels.vtk.org
+trame
+vtk-osmesa
+
