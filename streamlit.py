@@ -101,7 +101,7 @@ if st.button("Run Spectral Absorption Prediction"):
         fig, ax = plt.subplots()
         ax.plot(abs_wl[ :, 0], abs_wl[ :, 1])
         ax.set_xlabel("wavelength(nm)")
-        ax.set_ylabel("Abs")
+        ax.set_ylabel("Efficiency")
         ax.set_xlim([200, 3000])
         ax.set_ylim([0, 1])
         st.pyplot(fig)
