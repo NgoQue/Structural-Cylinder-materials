@@ -7,6 +7,7 @@ from mayavi import mlab
 from pandas import DataFrame 
 from PIL import Image
 import os
+import shutil
 #-------------------------Input----------------------------------------------------#
 add_selectbox = st.sidebar.selectbox(
     "Select material",
