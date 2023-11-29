@@ -84,8 +84,8 @@ def VN_model(d):
     abs_wl = extra_model.predict(a)
     abs_wl = abs_wl.reshape(1003, 2)
 #----------------Goi ham va ve do thi--------------------------------------------#
-st.subheader('Spectral Absorption Prediction')
-if st.button("Run"):
+# st.subheader('Spectral Absorption Prediction')
+if st.button("Run Spectral Absorption Prediction"):
     if (add_selectbox == "Au"): Au_model(number)
     if (add_selectbox == "Nb"): Nb_model(number)
     if (add_selectbox == "TiN"): TiN_model(number)
