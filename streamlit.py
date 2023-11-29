@@ -167,7 +167,7 @@ if st.button("Run"):
     import subprocess
     with col1: 
         # Chạy lệnh tạo máy chủ ảo Xvfb
-        os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost &")
+        os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost")
         
         # Thiết lập biến môi trường DISPLAY
         os.environ["DISPLAY"] = ":1"
