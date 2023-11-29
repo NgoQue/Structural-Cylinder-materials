@@ -1,2 +1,3 @@
 libgl1
-VcXsrv
+xvfb-run
+x11vnc
