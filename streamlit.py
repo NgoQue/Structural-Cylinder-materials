@@ -165,10 +165,6 @@ if st.button("Run"):
                 mlab.mesh(x3, y3, h, color=(0.8, 0.7, 0.65))
     #--------------------------------------------------------------------#
     import subprocess
-    
-    # Thiết lập biến môi trường DISPLAY
-    subprocess.run(["export", "DISPLAY=:1"], shell=True)
-
     with col1: 
         st.subheader("Image of the material")
         img3d(number)
