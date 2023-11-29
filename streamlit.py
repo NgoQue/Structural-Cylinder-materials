@@ -21,9 +21,9 @@ In the materials specifications:
 \n\n - h1 represents the center-to-center distance between two adjacent cylinders with a default value of 430nm""")
 #--------------------------------set up enviroment-------#
  # Chạy lệnh tạo máy chủ ảo Xvfb
-        os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost")
-        # Thiết lập biến môi trường DISPLAY
-        os.environ["DISPLAY"] = ":1"
+os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost")
+# Thiết lập biến môi trường DISPLAY
+os.environ["DISPLAY"] = ":1"
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
 def Au_model(d):
     global abs_wl
