@@ -94,7 +94,7 @@ if st.button("Run Spectral Absorption Prediction"):
     if (add_selectbox == "Ti"): Ti_model(number)
     if (add_selectbox == "VC"): VC_model(number)
     if (add_selectbox == "VN"): VN_model(number)
-    col1, col2 = st.columns([3.9, 1])
+    col1, col2 = st.columns([3.6, 1])
     with col1:
         # st.subheader("The absorption spectrum")
         plt.figure(dpi = 300)
