@@ -133,7 +133,7 @@ with col2:
 def img3d(d):
     D = d + 30 
     h1 = D
-    # mlab.options.offscreen = True
+    mlab.options.offscreen = True
     mlab.figure(size=(700, 700), bgcolor=(1, 1, 1))
     x = np.array([0, 1, 1, 0, 0, 1, 1, 0])*(430*2+D+200) 
     y = np.array([0, 0, 1, 1, 0, 0, 1, 1])*(430+D+200)
