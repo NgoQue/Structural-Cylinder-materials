@@ -164,11 +164,10 @@ if st.button("Run"):
                 y3 = 430 + D/2 + 100 + (r)*np.sin(theta)
                 mlab.mesh(x3, y3, h, color=(0.8, 0.7, 0.65))
     #--------------------------------------------------------------------#
-    '''
     with col1: 
         st.subheader("Image of the material")
-    
         img3d(number)
+    '''
         def view(theta, phi):
             mlab.view(azimuth=60, elevation=70, distance=2500)#hinh anh ban dau khi chua thay doi goc
             mlab.view(theta, phi, distance=3000)
