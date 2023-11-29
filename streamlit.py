@@ -164,6 +164,13 @@ if st.button("Run"):
                 y3 = 430 + D/2 + 100 + (r)*np.sin(theta)
                 mlab.mesh(x3, y3, h, color=(0.8, 0.7, 0.65))
     #--------------------------------------------------------------------#
+    import subprocess
+    # Chạy lệnh tạo máy chủ ảo Xvfb
+    subprocess.run(["Xvfb", ":1", "-screen", "0", "1280x1024x24", "-auth", "localhost"])
+    
+    # Thiết lập biến môi trường DISPLAY
+    subprocess.run(["export", "DISPLAY=:1"], shell=True)
+
     with col1: 
         st.subheader("Image of the material")
         img3d(number)
