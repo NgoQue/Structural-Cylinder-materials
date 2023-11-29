@@ -177,11 +177,12 @@ if st.button("Run"):
         def view(theta, phi):
             mlab.view(azimuth=60, elevation=70, distance=2500)#hinh anh ban dau khi chua thay doi goc
             mlab.view(theta, phi, distance=3000)
-            mlab.savefig("3D/image.png")
-            image_path = '3D/image.png'
+            mlab.savefig("image.png")
+            image_path = 'image.png'
     
             st.image(image_path)
-            shutil.rmtree('3D')
+            # shutil.rmtree('3D')
+            os.remove(image_path)
     
         azimuth = st.slider('The azimuth argument specifies the angle "phi" on the x-y plane.', 0, 360, 60, 10)
         elevation = st.slider('The elevation argument specifies the angle "theta" from the z axis.', 0, 180, 70, 10)
