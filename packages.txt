@@ -1,3 +1,2 @@
 libgl1
 libxrender1
-chmod a+w /tmp/.X11-unix
