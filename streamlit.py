@@ -115,7 +115,7 @@ if st.button("Run Spectral Absorption Prediction"):
     with col2:
         # st.write("Data")
         data = pd.DataFrame(abs_wl, columns=['Wavelength', 'Abs'])
-        data_csv = st.dataframe(data, height=350, width=200)
+        data_csv = st.dataframe(data, height=380, width=200)
     
         # #save fiel as CSV
         # data1 = data.to_csv(index=False)
