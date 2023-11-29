@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import joblib
-# from mayavi import mlab
+from mayavi import mlab
 from pandas import DataFrame 
 from PIL import Image
 import os
