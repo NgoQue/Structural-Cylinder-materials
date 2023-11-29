@@ -166,9 +166,13 @@ if st.button("Run"):
     #--------------------------------------------------------------------#
     import subprocess
     with col1: 
+        # Chạy lệnh tạo máy chủ ảo Xvfb
+        os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost &")
+        
+        # Thiết lập biến môi trường DISPLAY
+        os.environ["DISPLAY"] = ":1"
         st.subheader("Image of the material")
         img3d(number)
-    '''
         def view(theta, phi):
             mlab.view(azimuth=60, elevation=70, distance=2500)#hinh anh ban dau khi chua thay doi goc
             mlab.view(theta, phi, distance=3000)
@@ -181,4 +185,3 @@ if st.button("Run"):
         azimuth = st.slider('The azimuth argument specifies the angle "phi" on the x-y plane.', 0, 360, 60, 10)
         elevation = st.slider('The elevation argument specifies the angle "theta" from the z axis.', 0, 180, 70, 10)
         view(azimuth, elevation)
-    '''
