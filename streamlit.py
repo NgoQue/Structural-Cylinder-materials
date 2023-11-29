@@ -113,7 +113,7 @@ if st.button("Run"):
     st.markdown("The average absorption efficiency of :blue[**%s**] at d =  %d, h1 = %d is: **%.2f** %% " %(add_selectbox, number, number+30, 100*H))
     #------------------------------Tao va lưu du lieu------------------------------------#
     with col2:
-        st.write("Data")
+        # st.write("Data")
         data = pd.DataFrame(abs_wl, columns=['Wavelength', 'Abs'])
         data_csv = st.dataframe(data, height=350, width=200)
     
