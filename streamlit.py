@@ -162,6 +162,7 @@ def img3d(d):
             y3 = 430 + D/2 + 100 + (r)*np.sin(theta)
             mlab.mesh(x3, y3, h, color=(0.8, 0.7, 0.65))
 #--------------------------------------------------------------------#
+'''
 with col1: 
     st.subheader("Image of the material")
 
@@ -178,3 +179,4 @@ with col1:
     azimuth = st.slider('The azimuth argument specifies the angle "phi" on the x-y plane.', 0, 360, 60, 10)
     elevation = st.slider('The elevation argument specifies the angle "theta" from the z axis.', 0, 180, 70, 10)
     view(azimuth, elevation)
+'''
