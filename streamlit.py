@@ -16,8 +16,8 @@ add_selectbox = st.sidebar.selectbox(
 number = st.sidebar.number_input('Please enter the inner diameter of the cylinder into the box below.',value  = 200, step = 10)
 st.sidebar.markdown("""
 In the materials specifications:
-\n\n - d represents the inner radius of the cylinder
-\n\n - D represents the outer radius of the cylinder
+\n\n - d represents the inner diameter of the cylinder
+\n\n - D represents the outer diameter of the cylinder
 \n\n - h1 represents the center-to-center distance between two adjacent cylinders with a default value of 430nm""")
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
 def Au_model(d):
