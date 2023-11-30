@@ -92,66 +92,59 @@ def efficiency(abs_wl):
     H = H/2700
     return H
 #----------------Goi ham va ve do thi--------------------------------------------#
-H = []
-if (add_selectbox == "Au"):
-    Au_model(number)
-    for i in range(200, 400, 5):
-        Au_model(i)
-        H = H + [efficiency(abs_wl)]
-
-if (add_selectbox == "Nb"):
-    Nb_model(number)
-    for i in range(200, 400, 5):
-        Nb_model(i)
-        H = H + [efficiency(abs_wl)]
-
-if (add_selectbox == "TiN"):
-    TiN_model(number)
-    for i in range(200, 400, 5):
-        TiN_model(i)
-        H = H + [efficiency(abs_wl)]
-if (add_selectbox == "Ta"):
-    Ta_model(number)
-    for i in range(200, 400, 5):
-        Ta_model(i)
-        H = H + [efficiency(abs_wl)]
-
-if (add_selectbox == "TiC"):
-    TiC_model(number)
-    for i in range(200, 400, 5):
-        TiC_model(i)
-        H = H + [efficiency(abs_wl)]
-
-if (add_selectbox == "Ti"):
-    Ti_model(number)
-    for i in range(200, 400, 5):
-        Ti_model(i)
-        H = H + [efficiency(abs_wl)]
-
-if (add_selectbox == "VC"):
-    VC_model(number)
-    for i in range(200, 400, 5):
-        VC_model(i)
-        H = H + [efficiency(abs_wl)]
-if (add_selectbox == "VN"):
-    VN_model(number)
-    for i in range(200, 400, 5):
-        VN_model(i)
-        H = H + [efficiency(abs_wl)]
-
-H0 =max(H)
-index_max = H.index(max(H))
-D = range(200, 400, 5)
-D0 = D[index_max]
 if st.button("Run Spectral Absorption Prediction"):
-    if (add_selectbox == "Au"): Au_model(number)
-    if (add_selectbox == "Nb"): Nb_model(number)
-    if (add_selectbox == "TiN"): TiN_model(number)
-    if (add_selectbox == "Ta"): Ta_model(number)
-    if (add_selectbox == "TiC"): TiC_model(number)
-    if (add_selectbox == "Ti"): Ti_model(number)
-    if (add_selectbox == "VC"): VC_model(number)
-    if (add_selectbox == "VN"): VN_model(number)
+    H = []
+    if (add_selectbox == "Au"):
+        for i in range(200, 400, 5):
+            Au_model(i)
+            H = H + [efficiency(abs_wl)]
+        Au_model(number)
+    
+    if (add_selectbox == "Nb"):
+        for i in range(200, 400, 5):
+            Nb_model(i)
+            H = H + [efficiency(abs_wl)]
+        Nb_model(number)
+    
+    if (add_selectbox == "TiN"):
+        for i in range(200, 400, 5):
+            TiN_model(i)
+            H = H + [efficiency(abs_wl)]
+        TiN_model(number)
+        
+    if (add_selectbox == "Ta"):
+        for i in range(200, 400, 5):
+            Ta_model(i)
+            H = H + [efficiency(abs_wl)]
+        Ta_model(number)
+    
+    if (add_selectbox == "TiC"):
+        for i in range(200, 400, 5):
+            TiC_model(i)
+            H = H + [efficiency(abs_wl)]
+        TiC_model(number)
+    
+    if (add_selectbox == "Ti"):
+        for i in range(200, 400, 5):
+            Ti_model(i)
+            H = H + [efficiency(abs_wl)]
+        Ti_model(number)
+    
+    if (add_selectbox == "VC"):
+        for i in range(200, 400, 5):
+            VC_model(i)
+            H = H + [efficiency(abs_wl)]
+        VC_model(number)
+    if (add_selectbox == "VN"):
+        for i in range(200, 400, 5):
+            VN_model(i)
+            H = H + [efficiency(abs_wl)]
+        VN_model(number)
+    
+    H0 =max(H)
+    index_max = H.index(max(H))
+    D = range(200, 400, 5)
+    D0 = D[index_max]
     col1, col2 = st.columns([3.6, 1])
     with col1:
         # st.subheader("The absorption spectrum")
@@ -164,11 +157,14 @@ if st.button("Run Spectral Absorption Prediction"):
         ax.set_ylim([0, 1])
         st.pyplot(fig)
     #----------------Hieu suat hap thu-------------------------------------------------#
-    H = 0
-    for i in range(0, 1002, 1):
-        H += ((abs_wl[i+1, 1]+abs_wl[i, 1])/2) *(abs_wl[i+1, 0] - abs_wl[i, 0] )
-    H = H/2700
-    st.markdown("The average absorption efficiency of :blue[**%s**] at d =  %d, h1 = %d is: **%.2f** %% " %(add_selectbox, number, number+30, 100*H))
+    # H = 0
+    # for i in range(0, 1002, 1):
+    #     H += ((abs_wl[i+1, 1]+abs_wl[i, 1])/2) *(abs_wl[i+1, 0] - abs_wl[i, 0] )
+    # H = H/2700
+    st.write("The average absorption efficiency of :blue[**%s**] at d =  %d, h1 = %d is: **%.2f** %% " %(add_selectbox, number, number+30, 100*efficiency(abs_wl)))
+    st.write('In the diameter inner range from 200 to 400 nanometers, the maximum absorption efficiency of blue[**%s**] is **%.2f** %% at d= %d nm , h1 = %d' %(add_selectbox, H0*100, D0, D0+30))
+
+    
     #------------------------------Tao va lưu du lieu------------------------------------#
     with col2:
         # st.write("Data")
