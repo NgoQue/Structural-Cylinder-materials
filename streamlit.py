@@ -83,8 +83,66 @@ def VN_model(d):
     a = np.array(a).reshape(1,3*1003)
     abs_wl = extra_model.predict(a)
     abs_wl = abs_wl.reshape(1003, 2)
+
+def efficiency(abs_wl):
+    global H
+    H = 0
+    for i in range(0, 1002, 1):
+        H += ((abs_wl[i+1, 1]+abs_wl[i, 1])/2) *(abs_wl[i+1, 0] - abs_wl[i, 0] )
+    H = H/2700
+    return H
 #----------------Goi ham va ve do thi--------------------------------------------#
-# st.subheader('Spectral Absorption Prediction')
+H = []
+if (add_selectbox == "Au"):
+    Au_model(number)
+    for i in range(200, 400, 5):
+        Au_model(i)
+        H = H + [efficiency(abs_wl)]
+
+if (add_selectbox == "Nb"):
+    Nb_model(number)
+    for i in range(200, 400, 5):
+        Nb_model(i)
+        H = H + [efficiency(abs_wl)]
+
+if (add_selectbox == "TiN"):
+    TiN_model(number)
+    for i in range(200, 400, 5):
+        TiN_model(i)
+        H = H + [efficiency(abs_wl)]
+if (add_selectbox == "Ta"):
+    Ta_model(number)
+    for i in range(200, 400, 5):
+        Ta_model(i)
+        H = H + [efficiency(abs_wl)]
+
+if (add_selectbox == "TiC"):
+    TiC_model(number)
+    for i in range(200, 400, 5):
+        TiC_model(i)
+        H = H + [efficiency(abs_wl)]
+
+if (add_selectbox == "Ti"):
+    Ti_model(number)
+    for i in range(200, 400, 5):
+        Ti_model(i)
+        H = H + [efficiency(abs_wl)]
+
+if (add_selectbox == "VC"):
+    VC_model(number)
+    for i in range(200, 400, 5):
+        VC_model(i)
+        H = H + [efficiency(abs_wl)]
+if (add_selectbox == "VN"):
+    VN_model(number)
+    for i in range(200, 400, 5):
+        VN_model(i)
+        H = H + [efficiency(abs_wl)]
+
+H0 =max(H)
+index_max = H.index(max(H))
+D = range(200, 400, 5)
+D0 = D[index_max]
 if st.button("Run Spectral Absorption Prediction"):
     if (add_selectbox == "Au"): Au_model(number)
     if (add_selectbox == "Nb"): Nb_model(number)
