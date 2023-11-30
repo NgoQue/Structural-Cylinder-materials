@@ -11,7 +11,7 @@ import shutil
 #-------------------------Input----------------------------------------------------#
 add_selectbox = st.sidebar.selectbox(
     "Select material",
-    ("Au", "Nb", "TiN", "Ta", "TiC", "Ti",  "VC",  "VN"), index=None
+    ("Au", "Nb", "TiN", "Ta", "TiC", "Ti",  "VC",  "VN")
 )
 number = st.sidebar.number_input('Please enter the inner diameter of the cylinder into the box below.',value  = 200, step = 10)
 st.sidebar.markdown("""
