@@ -157,27 +157,13 @@ if st.button("Run Spectral Absorption Prediction"):
         ax.set_ylim([0, 1])
         st.pyplot(fig)
     #----------------Hieu suat hap thu-------------------------------------------------#
-    # H = 0
-    # for i in range(0, 1002, 1):
-    #     H += ((abs_wl[i+1, 1]+abs_wl[i, 1])/2) *(abs_wl[i+1, 0] - abs_wl[i, 0] )
-    # H = H/2700
     st.write("The average absorption efficiency of :blue[**%s**] at d =  **%d** nm, h1 = **%d** nm is: **%.2f** %% " %(add_selectbox, number, number+30, 100*efficiency(abs_wl)))
-    st.write('The maximum absorption efficiency of :blue[**%s**] is **%.2f** %% at d= **%d** nm , h1 = **%d** nm' %(add_selectbox, H0*100, D0, D0+30))
-
-    
+    st.write('The maximum absorption efficiency of :blue[**%s**] is **%.2f** %% at d= **%d** nm , h1 = **%d** nm' %(add_selectbox, H0*100, D0, D0+30))  
     #------------------------------Tao va lưu du lieu------------------------------------#
     with col2:
         # st.write("Data")
         data = pd.DataFrame(abs_wl, columns=['Wavelength', 'Efficiency'])
         data_csv = st.dataframe(data, height=380, width=200)
-    
-        # #save fiel as CSV
-        # data1 = data.to_csv(index=False)
-        # st.download_button(
-        #     label="Download data as CSV",
-        #     data=data1, 
-        #     file_name='data.csv',
-        #     mime='text/csv')
     
         #save fiel as txt
         data2 = data.to_csv(index=False, sep='\t')
