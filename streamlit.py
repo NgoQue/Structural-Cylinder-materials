@@ -162,7 +162,7 @@ if st.button("Run Spectral Absorption Prediction"):
     #     H += ((abs_wl[i+1, 1]+abs_wl[i, 1])/2) *(abs_wl[i+1, 0] - abs_wl[i, 0] )
     # H = H/2700
     st.write("The average absorption efficiency of :blue[**%s**] at d =  %d, h1 = %d is: **%.2f** %% " %(add_selectbox, number, number+30, 100*efficiency(abs_wl)))
-    st.write('In the diameter inner range from 200 to 400 nanometers, the maximum absorption efficiency of blue[**%s**] is **%.2f** %% at d= %d nm , h1 = %d' %(add_selectbox, H0*100, D0, D0+30))
+    st.write('In the inner diameter range from 200 to 400 nanometers, the maximum absorption efficiency of :blue[**%s**] is **%.2f** %% at d= %d nm , h1 = %d' %(add_selectbox, H0*100, D0, D0+30))
 
     
     #------------------------------Tao va lưu du lieu------------------------------------#
