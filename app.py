@@ -173,7 +173,7 @@ if st.button("Run Spectral Absorption Prediction"):
             data=data2, 
             file_name='data.txt',
             mime='text/csv')
-    ------------------------------Hinh anh vat lieu---------------------------------------#
+    #------------------------------Hinh anh vat lieu---------------------------------------#
     def img3d(d):
         D = d + 30 
         h1 = D
