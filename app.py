@@ -8,6 +8,10 @@ from pandas import DataFrame
 from PIL import Image
 import os
 import shutil
+# # Chạy lệnh tạo máy chủ ảo Xvfb
+    os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost")
+    # Thiết lập biến môi trường DISPLAY
+    os.environ["DISPLAY"] = ":1"
 #-------------------------Input----------------------------------------------------#
 add_selectbox = st.sidebar.selectbox(
     "Select material",
@@ -206,10 +210,6 @@ if st.button("Run Spectral Absorption Prediction"):
                 y3 = 430 + D/2 + 100 + (r)*np.sin(theta)
                 mlab.mesh(x3, y3, h, color=(0.8, 0.7, 0.65))
     #--------------------------------------------------------------------#
-    # # Chạy lệnh tạo máy chủ ảo Xvfb
-    os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost")
-    # Thiết lập biến môi trường DISPLAY
-    os.environ["DISPLAY"] = ":1"
     with col1: 
         st.subheader("Image of the material")
         img3d(number)
