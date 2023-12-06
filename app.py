@@ -9,9 +9,9 @@ from PIL import Image
 import os
 import shutil
 # # Chạy lệnh tạo máy chủ ảo Xvfb
-    os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost")
-    # Thiết lập biến môi trường DISPLAY
-    os.environ["DISPLAY"] = ":1"
+os.system("Xvfb :1 -screen 0 1280x1024x24 -auth localhost")
+# Thiết lập biến môi trường DISPLAY
+os.environ["DISPLAY"] = ":1"
 #-------------------------Input----------------------------------------------------#
 add_selectbox = st.sidebar.selectbox(
     "Select material",
