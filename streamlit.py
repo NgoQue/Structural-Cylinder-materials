@@ -152,15 +152,24 @@ if st.button("Spectral Absorption Prediction"):
     D0 = D[index_max]
     col1, col2 = st.columns([3.6, 1])
     with col1:
-        # st.subheader("The absorption spectrum")
-        plt.figure(dpi = 300)
-        fig, ax = plt.subplots()
-        ax.plot(abs_wl[ :, 0], abs_wl[ :, 1])
-        ax.set_xlabel("wavelength(nm)")
-        ax.set_ylabel("Efficiency")
-        ax.set_xlim([200, 3000])
-        ax.set_ylim([0, 1])
-        st.pyplot(fig)
+        if uploaded_file is None:
+            # st.subheader("The absorption spectrum")
+            plt.figure(dpi = 300)
+            fig, ax = plt.subplots()
+            ax.plot(abs_wl[ :, 0], abs_wl[ :, 1])
+            ax.set_xlabel("wavelength(nm)")
+            ax.set_ylabel("Efficiency")
+            ax.set_xlim([200, 3000])
+            ax.set_ylim([0, 1])
+            st.pyplot(fig)
+    #---------------------------------------------------------------#
+        # if uploaded_file is not None:
+        #         if uploaded_file.type == "text/csv":  # Đối với file csv
+        #             data_upload = pd.read_csv(uploaded_file, delimiter=' ', header=None, names=['col1', 'col2', 'col3'])
+        #             label = annotation["label"]
+        #             width = annotation['width']
+        #             height = annotation['height']
+                
     #----------------Hieu suat hap thu-------------------------------------------------#
     st.write("The average absorption efficiency of :blue[**%s**] at d =  **%d** nm, h1 = **%d** nm is: **%.2f** %% " %(add_selectbox, number, number+30, 100*efficiency(abs_wl)))
     st.write('The maximum absorption efficiency of :blue[**%s**] is **%.2f** %% at d= **%d** nm , h1 = **%d** nm' %(add_selectbox, H0*100, D0, D0+30))  
@@ -177,5 +186,6 @@ if st.button("Spectral Absorption Prediction"):
             data=data2, 
             file_name='data.txt',
             mime='text/csv')
+        
     st.markdown("In the future, we can develop our program to determine the absorption of metamaterials with more structural parameters and the presence of the dielectric layer sandwiched by two plasmonic layers as following.")
     st.image("3D/fig2.jpeg", use_column_width=True)
