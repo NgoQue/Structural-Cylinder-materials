@@ -20,7 +20,8 @@ In the materials specifications:
 \n\n - **D** is the outer diameter of the cylinder
 \n\n - **h₁** is the height of TiN nanorings
 \n\n - **L** is the center-to-center distance between two adjacent cylinders. In our calculations, we fix it to be 430nm""")
-#upload file user's data
+#-----------upload file user's data---------------#
+# st.sidebar.write()
 uploaded_file = st.sidebar.file_uploader("", type=["txt", "csv", "xlsx"])
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
 def Au_model(d):
