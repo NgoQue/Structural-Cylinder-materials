@@ -21,20 +21,20 @@ In the materials specifications:
 \n\n - **h₁** is the height of TiN nanorings
 \n\n - **L** is the center-to-center distance between two adjacent cylinders. In our calculations, we fix it to be 430nm""")
 
-uploaded_file = st.file_uploader("", type=["txt", "csv", "xlsx"])
+uploaded_file = st.sidebar.file_uploader("", type=["txt", "csv", "xlsx"])
 if uploaded_file is not None:
     # Xử lý file dựa trên loại file
     if uploaded_file.type == "text/plain":  # Đối với file txt
         text_data = uploaded_file.read()
-        st.text(text_data)
+        st.sidebar.text(text_data)
 
     elif uploaded_file.type == "text/csv":  # Đối với file csv
         csv_data = pd.read_csv(uploaded_file)
-        st.write(csv_data)
+        st.sidebar.write(csv_data)
 
     elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":  # Đối với file Excel
         excel_data = pd.read_excel(uploaded_file, engine="openpyxl")
-        st.write(excel_data)
+        st.sidebar.write(excel_data)
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
 def Au_model(d):
     global abs_wl
