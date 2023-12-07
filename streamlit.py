@@ -22,19 +22,6 @@ In the materials specifications:
 \n\n - **L** is the center-to-center distance between two adjacent cylinders. In our calculations, we fix it to be 430nm""")
 
 uploaded_file = st.sidebar.file_uploader("", type=["txt", "csv", "xlsx"])
-# if uploaded_file is not None:
-#     # Xử lý file dựa trên loại file
-#     if uploaded_file.type == "text/plain":  # Đối với file txt
-#         text_data = uploaded_file.read()
-#         st.write(text_data)
-
-#     elif uploaded_file.type == "text/csv":  # Đối với file csv
-#         csv_data = pd.read_csv(uploaded_file)
-#         st.write(csv_data)
-
-#     elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":  # Đối với file Excel
-#         excel_data = pd.read_excel(uploaded_file, engine="openpyxl")
-#         st.write(excel_data)
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
 def Au_model(d):
     global abs_wl
@@ -223,7 +210,7 @@ if st.button("Spectral Absorption Prediction"):
             ax.set_ylabel("Efficiency")
             ax.set_xlim([200, 3000])
             ax.set_ylim([0, 1])
-            st.pyplot(fig)
+            st.pyplot(plt)
     #----------------Hieu suat hap thu-------------------------------------------------#
     st.write("The average absorption efficiency of :blue[**%s**] at d =  **%d** nm, h1 = **%d** nm is: **%.2f** %% " %(add_selectbox, number, number+30, 100*efficiency(abs_wl)))
     st.write('The maximum absorption efficiency of :blue[**%s**] is **%.2f** %% at d= **%d** nm , h1 = **%d** nm' %(add_selectbox, H0*100, D0, D0+30))  
