@@ -162,50 +162,47 @@ if st.button("Spectral Absorption Prediction"):
             ax.set_xlim([200, 3000])
             ax.set_ylim([0, 1])
             st.pyplot(fig)
-    #---------------------------------------------------------------#
+    #----------------------------Read data uploaded file -----------------------------------#
         if uploaded_file is not None:
             if uploaded_file.type == "text/csv":  # Đối với file csv
                 data_upload = pd.read_csv(uploaded_file, delimiter=',' ,skiprows=1, header=None)
                 st.write(data_upload)
                 num_columns = len(data_upload.columns)
-                st.write(num_columns)
                 if (num_columns==2):
-                    col0 = data_upload.iloc[2:, 0]
-                    col1 = data_upload.iloc[2:, 1]
+                    col0 = data_upload.iloc[1:, 0]
+                    col1 = data_upload.iloc[1:, 1]
                 if (num_columns==3):
-                    col0 = data_upload.iloc[2:, 1]
-                    col1 = data_upload.iloc[2:, 2]
+                    col0 = data_upload.iloc[1:, 1]
+                    col1 = data_upload.iloc[1:, 2]
                     
             if uploaded_file.type == "text/plain":  # Đối với file txt
                 data_upload = pd.read_csv(uploaded_file, delimiter='\s+',skiprows=1, header=None)
                 st.write(data_upload)
                 num_columns = len(data_upload.columns)
-                st.write(num_columns)
                 if (num_columns==2):
-                    col0 = data_upload.iloc[2:, 0]
-                    col1 = data_upload.iloc[2:, 1]
+                    col0 = data_upload.iloc[1:, 0]
+                    col1 = data_upload.iloc[1:, 1]
                 if (num_columns==3):
-                    col0 = data_upload.iloc[2:, 1]
-                    col1 = data_upload.iloc[2:, 2]
+                    col0 = data_upload.iloc[1:, 1]
+                    col1 = data_upload.iloc[1:, 2]
                     
             if uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":  # Đối với file Excel
-                data_upload = pd.read_excel(uploaded_file, engine="openpyxl",skiprows=1)
+                data_upload = pd.read_excel(uploaded_file, engine="openpyxl",skiprows=1, header=None)
                 st.write(data_upload)
                 num_columns = len(data_upload.columns)
-                st.write(num_columns)
                 if (num_columns==2):
-                    col0 = data_upload.iloc[2:, 0]
-                    col1 = data_upload.iloc[2:, 1]
+                    col0 = data_upload.iloc[1:, 0]
+                    col1 = data_upload.iloc[1:, 1]
                 if (num_columns==3):
-                    col0 = data_upload.iloc[2:, 1]
-                    col1 = data_upload.iloc[2:, 2]
+                    col0 = data_upload.iloc[1:, 1]
+                    col1 = data_upload.iloc[1:, 2]
         #-----------------------------------------------------------------------------------#
             plt.figure(dpi = 300)
             fig, ax = plt.subplots()
-            ax.plot(abs_wl[ :, 0], abs_wl[ :, 1],'r',  label='predicted results', marker='o', markersize=4, markevery=27)
-            ax.plot(col0, col1,'b',  label="user's data", marker='s', markersize=4, markevery=int(len(col0)/30))
-            # ax.plot(abs_wl[ :, 0], abs_wl[ :, 1],'r', label='predicted results')
-            # ax.plot(col0, col1,'b', label="user's data")
+            # ax.plot(abs_wl[ :, 0], abs_wl[ :, 1],'r',  label='predicted results', marker='o', markersize=4, markevery=27)
+            # ax.plot(col0, col1,'b',  label="user's data", marker='s', markersize=4, markevery=int(len(col0)/30))
+            ax.plot(abs_wl[ :, 0], abs_wl[ :, 1],'r', label='predicted results')
+            ax.plot(col0, col1,'b', label="user's data")
             ax.set_xlabel("wavelength(nm)")
             ax.set_ylabel("Efficiency")
             ax.set_xlim([200, 3000])
