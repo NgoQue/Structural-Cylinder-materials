@@ -164,7 +164,7 @@ if st.button("Spectral Absorption Prediction"):
             ax.set_ylabel("Efficiency")
             ax.set_xlim([200, 3000])
             ax.set_ylim([0, 1])
-            st.pyplot(fig)
+            st.pyplot(fig).set_visible(False)
     #----------------------------Read data uploaded file -----------------------------------#
         if uploaded_file is not None:
             if uploaded_file.type == "text/csv":  # Đối với file csv
@@ -210,7 +210,7 @@ if st.button("Spectral Absorption Prediction"):
             ax.set_ylabel("Efficiency")
             ax.set_xlim([200, 3000])
             ax.set_ylim([0, 1])
-            ax.legend()
+            ax.legend().set_visible(False)
             st.pyplot(fig)
     #----------------Hieu suat hap thu-------------------------------------------------#
     st.write("\n\n - The average absorption efficiency of :blue[**%s**] at d =  **%d** nm, h₁ = **%d** nm is: **%.2f** %% " %(add_selectbox, number, number+30, 100*efficiency(abs_wl)))
