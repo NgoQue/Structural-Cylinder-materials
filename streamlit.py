@@ -21,7 +21,7 @@ In the materials specifications:
 \n\n - **h₁** is the height of TiN nanorings
 \n\n - **L** is the center-to-center distance between two adjacent cylinders. In our calculations, we fix it to be 430nm""")
 #-----------upload file user's data---------------#
-st.sidebar.write('Use the button to upload your optical spectrum's data and compare with our calculation')
+st.sidebar.write("Use the button to upload your optical spectrum's data and compare with our calculation")
 uploaded_file = st.sidebar.file_uploader("", type=["txt", "csv", "xlsx"])
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
 def Au_model(d):
