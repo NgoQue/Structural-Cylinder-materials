@@ -22,7 +22,6 @@ In the materials specifications:
 \n\n - **L** is the center-to-center distance between two adjacent cylinders. In our calculations, we fix it to be 430nm""")
 
 uploaded_file = st.file_uploader("", type=["txt", "csv", "xlsx"])
-# Kiểm tra xem người dùng đã upload file chưa
 if uploaded_file is not None:
     # Xử lý file dựa trên loại file
     if uploaded_file.type == "text/plain":  # Đối với file txt
