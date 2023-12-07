@@ -164,7 +164,7 @@ if st.button("Spectral Absorption Prediction"):
             ax.set_ylabel("Efficiency")
             ax.set_xlim([200, 3000])
             ax.set_ylim([0, 1])
-            ax.legend().set_visible(False)
+            ax.legend(frameon=False)
             st.pyplot(fig)
     #----------------------------Read data uploaded file -----------------------------------#
         if uploaded_file is not None:
@@ -211,7 +211,7 @@ if st.button("Spectral Absorption Prediction"):
             ax.set_ylabel("Efficiency")
             ax.set_xlim([200, 3000])
             ax.set_ylim([0, 1])
-            ax.legend().set_visible(False)
+            ax.legend(frameon=False)
             # plt.show()
             st.pyplot(fig)
     #----------------Hieu suat hap thu-------------------------------------------------#
