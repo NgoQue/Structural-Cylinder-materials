@@ -166,7 +166,7 @@ if st.button("Spectral Absorption Prediction"):
         if uploaded_file is not None:
             if uploaded_file.type == "text/csv":  # Đối với file csv
                 data_upload = pd.read_csv(uploaded_file, delimiter=',' ,skiprows=1, header=None)
-                st.write(data_upload)
+                # st.write(data_upload)
                 num_columns = len(data_upload.columns)
                 if (num_columns==2):
                     col0 = data_upload.iloc[1:, 0]
@@ -177,7 +177,7 @@ if st.button("Spectral Absorption Prediction"):
                     
             if uploaded_file.type == "text/plain":  # Đối với file txt
                 data_upload = pd.read_csv(uploaded_file, delimiter='\s+',skiprows=1, header=None)
-                st.write(data_upload)
+                # st.write(data_upload)
                 num_columns = len(data_upload.columns)
                 if (num_columns==2):
                     col0 = data_upload.iloc[1:, 0]
@@ -188,7 +188,7 @@ if st.button("Spectral Absorption Prediction"):
                     
             if uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":  # Đối với file Excel
                 data_upload = pd.read_excel(uploaded_file, engine="openpyxl",skiprows=1, header=None)
-                st.write(data_upload)
+                # st.write(data_upload)
                 num_columns = len(data_upload.columns)
                 if (num_columns==2):
                     col0 = data_upload.iloc[1:, 0]
