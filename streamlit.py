@@ -202,8 +202,8 @@ if st.button("Spectral Absorption Prediction"):
         #-----------------------------------------------------------------------------------#
             plt.figure(dpi = 300)
             fig, ax = plt.subplots()
-            ax.plot(abs_wl[ :, 0], abs_wl[ :, 1],'r',  label='predicted results', marker='o', markersize=4, markevery=10)
-            ax.plot(col0, col1,'b',  label="user's data", marker='s', markersize=4, markevery=10)
+            ax.plot(abs_wl[ :, 0], abs_wl[ :, 1],'r',  label='predicted results', marker='o', markersize=4, markevery=27)
+            ax.plot(col0, col1,'b',  label="user's data", marker='s', markersize=4, markevery=27)
             # ax.plot(abs_wl[ :, 0], abs_wl[ :, 1],'r', label='predicted results')
             # ax.plot(col0, col1,'b', label="user's data")
             ax.set_xlabel("wavelength(nm)")
