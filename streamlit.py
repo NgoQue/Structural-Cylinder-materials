@@ -18,7 +18,7 @@ st.sidebar.markdown("""
 In the materials specifications:
 \n\n - d represents the inner diameter of the cylinder
 \n\n - D represents the outer diameter of the cylinder
-\n\n - h1 represents the center-to-center distance between two adjacent cylinders with a default value of 430nm""")
+\n\n - h<sub>1</sub> is the height of TiN nanorings""")
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
 def Au_model(d):
     global abs_wl
