@@ -22,19 +22,19 @@ In the materials specifications:
 \n\n - **L** is the center-to-center distance between two adjacent cylinders. In our calculations, we fix it to be 430nm""")
 
 uploaded_file = st.sidebar.file_uploader("", type=["txt", "csv", "xlsx"])
-if uploaded_file is not None:
-    # Xử lý file dựa trên loại file
-    if uploaded_file.type == "text/plain":  # Đối với file txt
-        text_data = uploaded_file.read()
-        st.text(text_data)
+# if uploaded_file is not None:
+#     # Xử lý file dựa trên loại file
+#     if uploaded_file.type == "text/plain":  # Đối với file txt
+#         text_data = uploaded_file.read()
+#         st.write(text_data)
 
-    elif uploaded_file.type == "text/csv":  # Đối với file csv
-        csv_data = pd.read_csv(uploaded_file)
-        st.write(csv_data)
+#     elif uploaded_file.type == "text/csv":  # Đối với file csv
+#         csv_data = pd.read_csv(uploaded_file)
+#         st.write(csv_data)
 
-    elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":  # Đối với file Excel
-        excel_data = pd.read_excel(uploaded_file, engine="openpyxl")
-        st.write(excel_data)
+#     elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":  # Đối với file Excel
+#         excel_data = pd.read_excel(uploaded_file, engine="openpyxl")
+#         st.write(excel_data)
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
 def Au_model(d):
     global abs_wl
@@ -179,6 +179,7 @@ if st.button("Spectral Absorption Prediction"):
         if uploaded_file is not None:
             if uploaded_file.type == "text/csv":  # Đối với file csv
                 data_upload = pd.read_csv(uploaded_file, delimiter=' ', header=None)
+                st.write(data_upload)
                 num_columns = len(data_upload.columns)
                 st.write(num_columns)
                 if (num_columns==2):
@@ -191,6 +192,7 @@ if st.button("Spectral Absorption Prediction"):
                     
             if uploaded_file.type == "text/plain":  # Đối với file txt
                 data_upload = pd.read_csv(uploaded_file, delimiter='\t', header=None)
+                st.write(data_upload)
                 num_columns = len(data_upload.columns)
                 st.write(num_columns)
                 if (num_columns==2):
@@ -203,6 +205,7 @@ if st.button("Spectral Absorption Prediction"):
                     
             if uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":  # Đối với file Excel
                 data_upload = pd.read_excel(uploaded_file, engine="openpyxl")
+                st.write(data_upload)
                 num_columns = len(data_upload.columns)
                 st.write(num_columns)
                 if (num_columns==2):
