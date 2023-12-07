@@ -229,3 +229,4 @@ if st.button("Spectral Absorption Prediction"):
         
     st.markdown("In the future, we can develop our program to determine the absorption of metamaterials with more structural parameters and the presence of the dielectric layer sandwiched by two plasmonic layers as following.")
     st.image("3D/fig2.jpeg", use_column_width=True)
+    st.image("3D/fig2.jpeg",width= 550)
