@@ -96,7 +96,8 @@ def efficiency(abs_wl):
     return H
 #----------------Goi ham va ve do thi--------------------------------------------#
 st.markdown(" We calculate the spectral absorption of TiN-nanoring-based metamaterials by machine learning algorithms and data sets collected from CST simulations. The structure of the metamaterials is following:")
-st.image("3D/fig1.jpeg",width= 300, use_column_width=True)
+# st.image("3D/fig1.jpeg",width= 300, use_column_width=True)
+st.image("3D/fig1.jpeg",width= 300)
 if st.button("Spectral Absorption Prediction"):
     H = []
     if (add_selectbox == "Au"):
