@@ -213,8 +213,8 @@ if st.button("Spectral Absorption Prediction"):
             ax.legend()
             st.pyplot(fig)
     #----------------Hieu suat hap thu-------------------------------------------------#
-    st.write("\n\n - The average absorption efficiency of :blue[**%s**] at d =  **%d** nm, h1 = **%d** nm is: **%.2f** %% " %(add_selectbox, number, number+30, 100*efficiency(abs_wl)))
-    st.write('\n\n - The maximum absorption efficiency of :blue[**%s**] is **%.2f** %% at d= **%d** nm , h1 = **%d** nm' %(add_selectbox, H0*100, D0, D0+30))  
+    st.write("\n\n - The average absorption efficiency of :blue[**%s**] at d =  **%d** nm, h₁ = **%d** nm is: **%.2f** %% " %(add_selectbox, number, number+30, 100*efficiency(abs_wl)))
+    st.write('\n\n - The maximum absorption efficiency of :blue[**%s**] is **%.2f** %% at d= **%d** nm , h₁ = **%d** nm' %(add_selectbox, H0*100, D0, D0+30))  
     #------------------------------Tao va lưu du lieu------------------------------------#
     with col2:
         # st.write("Data")
