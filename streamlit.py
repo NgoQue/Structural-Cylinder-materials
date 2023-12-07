@@ -182,8 +182,8 @@ if st.button("Spectral Absorption Prediction"):
                 num_columns = len(data_upload.columns)
                 st.write(num_columns)
                 if (num_columns==2):
-                    col0 = data_upload.iloc[1:, 0]
-                    col1 = data_upload.iloc[1:, 1]
+                    col0 = data_upload.iloc[:, 0]
+                    col1 = data_upload.iloc[:, 1]
                 if (num_columns==3):
                     col0 = data_upload.iloc[1:, 1]
                     col1 = data_upload.iloc[1:, 2]
@@ -194,11 +194,11 @@ if st.button("Spectral Absorption Prediction"):
                 num_columns = len(data_upload.columns)
                 st.write(num_columns)
                 if (num_columns==2):
-                    col0 = data_upload.iloc[1:, 0]
-                    col1 = data_upload.iloc[1:, 1]
+                    col0 = data_upload.iloc[:, 0]
+                    col1 = data_upload.iloc[:, 1]
                 if (num_columns==3):
-                    col0 = data_upload.iloc[1:, 1]
-                    col1 = data_upload.iloc[1:, 2]
+                    col0 = data_upload.iloc[:, 1]
+                    col1 = data_upload.iloc[:, 2]
                 st.write(col0, col1)
                     
             if uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":  # Đối với file Excel
@@ -206,11 +206,11 @@ if st.button("Spectral Absorption Prediction"):
                 num_columns = len(data_upload.columns)
                 st.write(num_columns)
                 if (num_columns==2):
-                    col0 = data_upload.iloc[1:, 0]
-                    col1 = data_upload.iloc[1:, 1]
+                    col0 = data_upload.iloc[:, 0]
+                    col1 = data_upload.iloc[:, 1]
                 if (num_columns==3):
-                    col0 = data_upload.iloc[1:, 1]
-                    col1 = data_upload.iloc[1:, 2]
+                    col0 = data_upload.iloc[:, 1]
+                    col1 = data_upload.iloc[:, 2]
                 st.write(col0, col1)
         #-----------------------------------------------------------------------------------#
             plt.figure(dpi = 300)
