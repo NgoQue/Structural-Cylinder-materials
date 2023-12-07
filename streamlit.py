@@ -16,8 +16,8 @@ add_selectbox = st.sidebar.selectbox(
 number = st.sidebar.number_input('Please enter the inner diameter of the cylinder into the box below.',value  = 200, step = 10)
 st.sidebar.markdown("""
 In the materials specifications:
-\n\n - **d** represents the inner diameter of the cylinder
-\n\n - **D** represents the outer diameter of the cylinder
+\n\n - **d** is the inner diameter of the cylinder
+\n\n - **D** is the outer diameter of the cylinder
 \n\n - **h₁** is the height of TiN nanorings
 \n\n - **L** is the center-to-center distance between two adjacent cylinders. In our calculations, we fix it to be 430nm""")
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
