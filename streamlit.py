@@ -14,13 +14,13 @@ add_selectbox = st.sidebar.selectbox(
     ("Au", "Nb", "TiN", "Ta", "TiC", "Ti",  "VC",  "VN")
 )
 number = st.sidebar.number_input('Please enter the inner diameter of the cylinder into the box below.',value  = 200, step = 10)
-st.sidebar.markdown("""
+st.sidebar.write("""
 In the materials specifications:
 \n\n - **d** is the inner diameter of the cylinder
 \n\n - **D** is the outer diameter of the cylinder
 \n\n - **h₁** is the height of TiN nanorings
 \n\n - **L** is the center-to-center distance between two adjacent cylinders. In our calculations, we fix it to be 430nm""")
-
+#upload file user's data
 uploaded_file = st.sidebar.file_uploader("", type=["txt", "csv", "xlsx"])
 #-----------------------------Lap ham cac thuat toan ML--------------------------------#
 def Au_model(d):
@@ -95,7 +95,7 @@ def efficiency(abs_wl):
     H = H/2700
     return H
 #----------------Goi ham va ve do thi--------------------------------------------#
-st.markdown(" We calculate the spectral absorption of TiN-nanoring-based metamaterials by machine learning algorithms and data sets collected from CST simulations. The structure of the metamaterials is following:")
+st.write(" We calculate the spectral absorption of TiN-nanoring-based metamaterials by machine learning algorithms and data sets collected from CST simulations. The structure of the metamaterials is following:")
 st.image("3D/fig1.jpeg", use_column_width=True)
 # st.image("3D/fig1.jpeg",width= 550)
 if st.button("Spectral Absorption Prediction"):
@@ -227,6 +227,6 @@ if st.button("Spectral Absorption Prediction"):
             file_name='data.txt',
             mime='text/csv')
         
-    st.markdown("In the future, we can develop our program to determine the absorption of metamaterials with more structural parameters and the presence of the dielectric layer sandwiched by two plasmonic layers as following.")
+    st.write("In the future, we can develop our program to determine the absorption of metamaterials with more structural parameters and the presence of the dielectric layer sandwiched by two plasmonic layers as following.")
     st.image("3D/fig2.jpeg", use_column_width=True)
     # st.image("3D/fig2.jpeg",width= 550)
