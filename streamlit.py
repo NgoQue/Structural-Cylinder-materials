@@ -210,6 +210,7 @@ if st.button("Spectral Absorption Prediction"):
             ax.set_ylabel("Efficiency")
             ax.set_xlim([200, 3000])
             ax.set_ylim([0, 1])
+            ax.legend()
             st.pyplot(fig)
     #----------------Hieu suat hap thu-------------------------------------------------#
     st.write("The average absorption efficiency of :blue[**%s**] at d =  **%d** nm, h1 = **%d** nm is: **%.2f** %% " %(add_selectbox, number, number+30, 100*efficiency(abs_wl)))
