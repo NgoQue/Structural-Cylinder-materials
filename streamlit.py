@@ -177,7 +177,8 @@ if st.button("Spectral Absorption Prediction"):
                 st.write(col0, col1)
                     
             if uploaded_file.type == "text/plain":  # Đối với file txt
-                data_upload = pd.read_csv(uploaded_file, delimiter='\t', header=None)
+                # data_upload = pd.read_csv(uploaded_file, delimiter='\t', header=None)
+                data_upload = upload_file.read(uploaded_file, delimiter='\t', header=None)
                 num_columns = len(data_upload.columns)
                 st.write(num_columns)
                 if (num_columns==2):
