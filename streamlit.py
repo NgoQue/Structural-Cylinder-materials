@@ -175,6 +175,28 @@ if st.button("Spectral Absorption Prediction"):
                         col0 = data_upload.iloc[1:, 1]
                         col1 = data_upload.iloc[1:, 2]
                         
+                if uploaded_file.type == "text/plain":  # Đối với file txt
+                    data_upload = pd.read_csv(uploaded_file, delimiter='\t', header=None)
+                    num_columns = len(data_upload.columns)
+                    st.write(num_columns)
+                    if (num_columns==2):
+                        col0 = data_upload.iloc[1:, 0]
+                        col1 = data_upload.iloc[1:, 1]
+                    if (num_columns==3):
+                        col0 = data_upload.iloc[1:, 1]
+                        col1 = data_upload.iloc[1:, 2]
+                        
+                elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":  # Đối với file Excel
+                    data_upload = pd.read_excel(uploaded_file, engine="openpyxl")
+                    num_columns = len(data_upload.columns)
+                    st.write(num_columns)
+                    if (num_columns==2):
+                        col0 = data_upload.iloc[1:, 0]
+                        col1 = data_upload.iloc[1:, 1]
+                    if (num_columns==3):
+                        col0 = data_upload.iloc[1:, 1]
+                        col1 = data_upload.iloc[1:, 2]
+        #-----------------------------------------------------------------------------------#
         plt.figure(dpi = 300)
         fig, ax = plt.subplots()
         ax.plot(abs_wl[ :, 0], abs_wl[ :, 1],'r',  label='predicted results', marker='o', markersize=4, markevery=10)
