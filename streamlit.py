@@ -93,6 +93,7 @@ def efficiency(abs_wl):
     H = H/2700
     return H
 #----------------Goi ham va ve do thi--------------------------------------------#
+st.image("3D/fig1.jpeg", use_column_width=True)
 if st.button("Run Spectral Absorption Prediction"):
     H = []
     if (add_selectbox == "Au"):
