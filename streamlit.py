@@ -214,8 +214,8 @@ if st.button("Spectral Absorption Prediction"):
             ax.set_ylabel("Efficiency", fontsize=14)
             ax.set_xlim([200, 3000])
             ax.set_ylim([0, 1])
-            plt.xticks(fontsize=12)
-            plt.yticks(fontsize=12)
+            plt.xticks(fontsize=14)
+            plt.yticks(fontsize=14)
             ax.legend(frameon=False, fontsize=14)
             st.pyplot(fig)
     #----------------Hieu suat hap thu-------------------------------------------------#
