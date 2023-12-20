@@ -154,7 +154,7 @@ if st.button("Spectral Absorption Prediction"):
     D0 = D[index_max]
     col1, col2 = st.columns([3.6, 1])
     with col1:
-        number_of_spaces = 5
+        number_of_spaces = 15
         st.header("&nbsp;" * number_of_spaces + "Plasmonic material is %s" %(add_selectbox))
         st.header("Plasmonic material is %s" %(add_selectbox))
         if uploaded_file is None:
