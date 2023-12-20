@@ -155,7 +155,7 @@ if st.button("Spectral Absorption Prediction"):
     col1, col2 = st.columns([3.6, 1])
     with col1:
         # st.header("Plasmonic material is %s" %(add_selectbox))
-        st.markdown(f"<h1 style='text-align: center;'>Plasmonic material is {add_selectbox}</h1>",unsafe_allow_html=True)
+        st.header(f"<h1 style='text-align: center;'>Plasmonic material is {add_selectbox}</h1>",unsafe_allow_html=True)
         if uploaded_file is None:
             # st.subheader("The absorption spectrum")
             plt.figure(dpi = 300)
