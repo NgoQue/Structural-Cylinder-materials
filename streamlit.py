@@ -98,8 +98,7 @@ def efficiency(abs_wl):
 #----------------Goi ham va ve do thi--------------------------------------------#
 st.write(" We calculate the spectral absorption of TiN-nanoring-based metamaterials by machine learning algorithms and data sets collected from CST simulations. The structure of the metamaterials is following:")
 st.image("3D/Figure0.png", use_column_width=True)
-# st.image("3D/fig1.jpeg",width= 550)
-# st.image("3D/fig1.jpeg",width= 450)
+
 if st.button("Spectral Absorption Prediction"):
     H = []
     if (add_selectbox == "Au"):
@@ -237,5 +236,4 @@ if st.button("Spectral Absorption Prediction"):
         
     st.write("In the future, we can develop our program to determine the absorption of metamaterials with more structural parameters and the presence of the dielectric layer sandwiched by two plasmonic layers as following.")
     st.image("3D/fig2.jpeg", use_column_width=True)
-    # st.image("3D/fig2.jpeg",width= 550)
-    # st.image("3D/fig2.jpeg",width= 450)
+    
