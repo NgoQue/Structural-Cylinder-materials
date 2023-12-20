@@ -154,6 +154,7 @@ if st.button("Spectral Absorption Prediction"):
     D0 = D[index_max]
     col1, col2 = st.columns([3.6, 1])
     with col1:
+        st.write("Phasmonic material is %s" %(add_selectbox))
         if uploaded_file is None:
             # st.subheader("The absorption spectrum")
             plt.figure(dpi = 300)
@@ -203,7 +204,6 @@ if st.button("Spectral Absorption Prediction"):
                     col0 = data_upload.iloc[1:, 1]
                     col1 = data_upload.iloc[1:, 2]
         #-----------------------------------------------------------------------------------#
-            st.write("Phasmonic material is %s" %(add_selectbox))
             plt.figure(dpi = 300)
             fig, ax = plt.subplots()
             # ax.plot(abs_wl[ :, 0], abs_wl[ :, 1],'r',  label='predicted results', marker='o', markersize=4, markevery=27)
