@@ -97,7 +97,7 @@ def efficiency(abs_wl):
     return H
 #----------------Goi ham va ve do thi--------------------------------------------#
 st.write(" We calculate the spectral absorption of plasmonic-nanoring-based metamaterials by machine learning algorithms and data sets collected from CST simulations. The structure of the metamaterials is following:")
-st.image("3D/Figure0.png", use_column_width=True)
+st.image("3D/Figure0.PNG", use_column_width=True)
 
 if st.button("Spectral Absorption Prediction"):
     H = []
@@ -236,5 +236,5 @@ if st.button("Spectral Absorption Prediction"):
             mime='text/csv')
         
     st.write("In the future, we can develop our program to determine the absorption of metamaterials with more structural parameters and the presence of the dielectric layer sandwiched by two plasmonic layers as following.")
-    st.image("3D/Figure1.png", use_column_width=True)
+    st.image("3D/Figure1.PNG", use_column_width=True)
     
