@@ -1,7 +1,7 @@
 streamlit
 # Base ------------------------------------------------------------------------
 matplotlib>=3.3
-numpy>=1.22.2
+numpy
 # mayavi>=4.8.1  
 joblib
 openpyxl
